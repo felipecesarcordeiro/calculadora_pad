@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.io.*;
+
 
 /*Felipe César Cordeiro Campelo
  * Matricula : 20121004010 
@@ -7,47 +6,28 @@ import java.io.*;
  * github:felipecesarcordeiro e-mail:felipecesarcordeiro@gmail.com*/
 
 
-public class Calculadora implements Runnable
+public class Calculadora
 {
-	private Operacao operacao;
-	private Operacao vaux;
-	
-	public Calculadora(Operacao opera)
+	public int adicao(int v1, int v2)
 	{
-		this.operacao = opera;
+		return v1 + v2;
 	}
 	
-	@Override
-	public void run()
+	public int subtracao(int v1, int v2)
 	{
-		while (true)
-		{
-			vaux = operacao.getOk();
-			int res; 
-				
-			if(vaux.getOperador() == '+')
-			{
-				res = vaux.somar();
-			}
-			else 
-				if (vaux.getOperador() == '-')
-				{
-					res = vaux.subtrair();			
-				} 
-				else 
-					if(vaux.getOperador() == '*') 
-					{
-						res = vaux.multiplicar();			
-					} 
-					else 
-					{
-						res = vaux.dividir();
-					}
-				
-			System.out.printf("Resultado: %d\n", res);
-		}
+		return v1 - v2;
+	}
 	
+	public float multiplica(int v1, int v2)
+	{
+		return v1 * v2;
+	}
+	
+	public float dividir(int v1, int v2)
+	{
+		return v1 / v2;
 	}
 
-	
 }
+	
+
