@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.*;
 
 /*Felipe César Cordeiro Campelo
  * Matricula : 20121004010 
@@ -8,66 +9,59 @@ import java.util.Scanner;
 
 public class Calculadora 
 {
-	public static void main(String[]args)
+		int op1, op2;
+		char operador;
+		float resultado;
+	
+		public double calcula(int op1, int op2, char operador) 
 		{
-			int op;
-			int op2;
-			String operador;
-			float resultado;
-			Scanner leitor = new Scanner(System.in);
+			double result = 0;
+			this.op1 = op1;
+			this.op2 = op2;
+			this.operador = operador;
 			
-			System.out.println("°°°°°°°Calculadora°°°°°°");
-			
-			System.out.println("Digite o primeiro valor");
-			op = leitor.nextInt();
-			
-			System.out.println("Digite o segundo valor");
-			op2 = leitor.nextInt();
-			
-			System.out.println("Operação + - ×(*) ÷(/)");
-			operador = leitor.next();
-			
-			switch(operador)
+			switch (operador) 
 			{
-				case "":
-				{
-					resultado = op+op2;
-					System.out.println(resultado );
-					break;
-				}
-				case "-":
-				{
-					resultado = op-op2;
-					System.out.println(resultado );
-					break;
-				}
-				case "/":
-				{
-					resultado = op/op2;
-					System.out.println(resultado );
-					break;
-				}
-				case "*":
-				{
-					resultado = op*op2;
-					System.out.print(resultado );
-					break;
-				}
-				
-				case "×":
-				{
-					resultado = op*op2;
-					System.out.print(resultado );
-					break;
-				}
-				
-				case "÷":
-				{
-					resultado = op/op2;
-					System.out.println(resultado );
-					break;
-				}
+				case '+':
+					{
+						result = op1 + op2;
+						break;
+					}
+				case '-':
+					{
+						result = op1 - op2;
+						break;
+					}
+				case '/':
+					{
+						result = op1 / op2;
+						break;
+					}
+				case '*':
+					{
+						result = op1* op2;
+						break;
+					}
+			}
+			
+			try 
+			{
+				PrintWriter log = new PrintWriter(new FileWriter("log.txt",true), true);
+				log.write(this.dados());
+				log.close();
+			} 
+			catch (IOException e) 
+			{
+				e.printStackTrace();
 				
 			}
+			return result;
 		}
-}
+	
+		public String dados() 
+		{
+	
+	
+			return (String.valueOf(op1) + operador + String.valueOf(op2));
+		}
+	}
