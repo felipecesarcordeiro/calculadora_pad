@@ -8,7 +8,7 @@ public class CalculatorClient {
 
           try { 
 
-        	  Felipe_Calculator c = (Felipe_Calculator)Naming.lookup( "rmi://jaca.ime.usp.br:1099/CalculatorService");
+        	  Felipe_Calculator c = (Felipe_Calculator)Naming.lookup("felipe_calculator");
 
               System.out.println( c.sub(4, 3) ); 
 

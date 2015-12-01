@@ -10,7 +10,7 @@ public class CalculatorServer {
 
           Felipe_Calculator c = new CalculatorImpl(); 
 
-           Naming.rebind(" rmi://jaca.ime.usp.br:1099/ CalculatorService", c); 
+           Naming.rebind("felipe_calculator", c); 
 
     } catch (Exception e) { 
 
