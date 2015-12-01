@@ -1,0 +1,12 @@
+terminal 1
+1ºmesmo diretorio bin
+4ºrmic CalculatorImpl (vai gerar um arquivo_stub.class)
+5ºrmiregistry(vai travar esse terminal)
+
+terminal 2
+2ºmesmo diretorio bin
+6ºjava CalculatorServer
+
+terminal 3
+3ºmesmo diretorio bin
+7ºjava CalculatorClient(irá aparecer os resultador)
