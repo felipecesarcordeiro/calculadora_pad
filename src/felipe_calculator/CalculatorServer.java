@@ -1,3 +1,7 @@
+/*Felipe César Cordeiro Campelo
+ * Matricula : 20121004010 
+ * 4°ano Integrado em informatica
+ * github:felipecesarcordeiro e-mail:felipecesarcordeiro@gmail.com*/
 package felipe_calculator;
 
 import java.rmi.Naming; 
